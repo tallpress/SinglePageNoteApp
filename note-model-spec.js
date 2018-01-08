@@ -1,9 +1,20 @@
 (function(exports) {
-  function testNoteMessage() {
-    var note = new Note();
+  function testInitializedNoteMessage() {
+    var note = new Note("My favourite langauge is JavaScript");
     assert.isTrue(note.text === "My favourite langauge is JavaScript")
 
     }
 
-  testNoteMessage();
+  testInitializedNoteMessage();
+})(this);
+
+
+(function(exports) {
+  function testGetNoteMessage() {
+    var note = new Note("My favourite langauge is JavaScript");
+    assert.isTrue(note.getNoteText() === "My favourite langauge is JavaScript")
+
+    }
+
+  testGetNoteMessage();
 })(this);
