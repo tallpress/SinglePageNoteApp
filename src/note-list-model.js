@@ -1,6 +1,6 @@
 (function(exports) {
 function NoteList() {
-  this.notes = []
+  this.notes = [];
 }
 exports.NoteList = NoteList;
 })(this)
