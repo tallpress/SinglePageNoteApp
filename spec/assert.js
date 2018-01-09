@@ -7,3 +7,8 @@ var assert = {
     }
   }
 };
+
+// function it(assertion, testFunction){
+//   console.log(assertion);
+//   testFunction();
+// };
