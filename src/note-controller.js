@@ -1,12 +1,19 @@
 window.onload = function(){
 
-  var app = document.getElementById("app");
+  (function(exports) {
+  function NoteController(noteList = new NoteList()) {
+    this.noteList = noteList;
+    this.noteList.createNote("Favourite drink: seltzer")
+    this.view = new NoteListView(this.noteList);
+  };
 
-  app.innerHTML = "howdy";
+  NoteController.prototype.insertHtml = function() {
+    document.getElementById('app').innerHTML = this.view.createHtmlString();
+  };
 
+  exports.NoteController = NoteController;
+  })(this);
+
+  controller = new NoteController();
+  controller.insertHtml()
 };
-
-
-// console.log(document);
-//
-// console.log(app);

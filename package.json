@@ -1,0 +1,22 @@
+{
+  "name": "further_javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewintram/javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ewintram/javascript/issues"
+  },
+  "homepage": "https://github.com/ewintram/javascript#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
