@@ -8,7 +8,17 @@ var assert = {
   }
 };
 
-// function it(assertion, testFunction){
-//   console.log(assertion);
-//   testFunction();
-// };
+function describe(assertion, testFunction){
+  console.log(assertion);
+  testFunction();
+}
+
+function toBeEqual(test, expectation) {
+  return function(){
+    if (test === expectation) {
+      console.log(test + " passed")
+    } else {
+      throw new Error("Expected " + test + " to equal " + expectation);
+    };
+  };
+};

@@ -23,7 +23,7 @@ function testGetNotes() {
 }
 testGetNotes();
 
-function testCreateNote() {
+function testCreateNote(note) {
   var noteList = new NoteList();
 
   noteList.createNote("note 1")
