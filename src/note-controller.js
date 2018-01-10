@@ -2,9 +2,8 @@ window.onload = function(){
 
   (function(exports) {
   function NoteController(noteList = new NoteList()) {
-    this.noteList = noteList;
-    this.noteList.createNote("Favourite drink: seltzer")
-    this.view = new NoteListView(this.noteList);
+    noteList.createNote("Favourite drink: seltzer")
+    this.view = new NoteListView(noteList);
   };
 
   NoteController.prototype.insertHtml = function() {
