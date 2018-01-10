@@ -1,13 +1,11 @@
-window.onload = function(){
-
   (function(exports) {
   function NoteController(noteList = new NoteList()) {
     noteList.createNote("Favourite drink: seltzer")
     this.view = new NoteListView(noteList);
   };
 
-  NoteController.prototype.insertHtml = function() {
-    document.getElementById('app').innerHTML = this.view.createHtmlString();
+  NoteController.prototype.insertHtml = function(controllerListView = this.view) {
+    document.getElementById('app').innerHTML = controllerListView.createHtmlString();
   };
 
   exports.NoteController = NoteController;
@@ -15,4 +13,3 @@ window.onload = function(){
 
   controller = new NoteController();
   controller.insertHtml()
-};
