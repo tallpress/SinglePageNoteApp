@@ -30,3 +30,14 @@ function testCreateNote(note) {
   assert.isTrue(noteList.notes[0].getNoteText() === "note 1")
 }
 testCreateNote();
+
+function testGetNoteById() {
+  var notelist = new NoteList();
+
+  notelist.createNote("lkasdfj;alsdkfj;alfskjfa;sdlk")
+  notelist.createNote("daaaaaaaaaaaaaa,.sandflkjndasjklfnadmf;sdlk")
+  notelist.createNote("laaaaadmfnadnbabnababababababababaabababab")
+  assert.isTrue(notelist.getNoteById(9).getNoteText() === "daaaaaaaaaaaaaa,.sandflkjndasjklfnadmf;sdlk")
+}
+
+testGetNoteById()

@@ -11,3 +11,13 @@ function testInsertHTML() {
 };
 
 testInsertHTML();
+
+function loadOneNote() {
+  var noteList = new NoteList()
+  noteList.createNote("stringsDFAJKDAFSHLKJFADHSLKAJDFHDFASLKJHDs");
+  var noteController = new NoteController(noteList);
+  noteController.viewSingleNote();
+  assert.isTrue(document.getElementById('app').innerHTML === "stringsDFAJKDAFSHLKJFADHSLKAJDFHDFASLKJHDs");
+}
+
+loadOneNote()

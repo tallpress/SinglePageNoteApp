@@ -1,5 +1,5 @@
 (function(exports) {
-  id = 0
+  var id = 0
 function Note(string) {
   this.text = string;
   this.id = id++

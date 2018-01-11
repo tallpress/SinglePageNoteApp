@@ -16,5 +16,13 @@ NoteList.prototype.createNote = function(string) {
   this.addNote(note);
 };
 
+NoteList.prototype.getNoteById = function(searchId) {
+  for(var i = 0; i < this.notes.length; i++){
+    if (this.notes[i].id === searchId){
+      return this.notes[i];
+    };
+  };
+};
+
 exports.NoteList = NoteList;
 })(this);
