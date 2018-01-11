@@ -1,36 +1,33 @@
 (function(exports) {
 function NoteController(noteList = new NoteList()) {
-  noteList.createNote("Favourite drink: seltzer")
-  this.view = new NoteListView(noteList);
-  this.noteList = noteList
+  this.noteList = noteList;
+  this.noteList.createNote("Favourite drink: seltzer");
+  this.view = new NoteListView(this.noteList);
 };
 
-NoteController.prototype.insertHtml = function(controllerListView = this.view) {
+NoteController.prototype.makeHTMLList = function(controllerListView = this.view) {
   document.getElementById('app').innerHTML = controllerListView.createHtmlString();
 };
-
-
-NoteController.prototype.changeURLforGivenNote = function () {
-  window.addEventListener("hashchange", this.viewSingleNote)
-};
-
-
-// this code executes after the click event, which changes the url
-NoteController.prototype.viewSingleNote = function () {
-
-  var id = window.location.hash.split("#")[1];
-  console.log(this.noteList)
-  console.log(this.noteList.getNoteById(parseInt(id)));
-  var note = this.noteList.getNoteById(parseInt(id));
-  singleNoteView = new SingleNoteView(note);
-  document.getElementById('app').innerHTML = singleNoteView.createHtmlString();
-};
-
-
 
 exports.NoteController = NoteController;
 })(this);
 
+function changeDivForGivenNote() {
+  window.addEventListener("hashchange", viewSingleNote)
+};
+
+// this code executes after the click event, which changes the url
+function viewSingleNote(notelist) {
+  var id = window.location.hash.split("#")[1];
+  var note = controller.noteList.getNoteById(parseInt(id));
+  changeHTML(note)
+};
+
+function changeHTML(note) {
+  singleNoteView = new SingleNoteView(note);
+  document.getElementById('app').innerHTML = singleNoteView.createHtmlString();
+};
+
 controller = new NoteController();
-controller.insertHtml()
-controller.changeURLforGivenNote();
+controller.makeHTMLList()
+changeDivForGivenNote();

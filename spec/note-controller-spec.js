@@ -6,18 +6,8 @@ function testInsertHTML() {
   };
 
   var noteController = new NoteController()
-  noteController.insertHtml(noteListView);
+  noteController.makeHTMLList(noteListView);
   assert.isTrue(document.getElementById('app').innerHTML === "<ul><li>Favourite drink: milkshake</li></ul>")
 };
 
 testInsertHTML();
-
-function loadOneNote() {
-  var noteList = new NoteList()
-  noteList.createNote("stringsDFAJKDAFSHLKJFADHSLKAJDFHDFASLKJHDs");
-  var noteController = new NoteController(noteList);
-  noteController.viewSingleNote();
-  assert.isTrue(document.getElementById('app').innerHTML === "stringsDFAJKDAFSHLKJFADHSLKAJDFHDFASLKJHDs");
-}
-
-loadOneNote()
