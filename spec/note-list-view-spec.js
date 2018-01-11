@@ -6,6 +6,6 @@ function testCreateHtmlString() {
 
   var noteListView = new NoteListView(noteList);
 
-  assert.isTrue(noteListView.createHtmlString() === "<ul><li>Lorem ipsum dolor si</li><li>Ut enim ad minim ven</li></ul>");
+  assert.isTrue(noteListView.createHtmlString() === "<ul><li><a href='#8'>Lorem ipsum dolor si</a></li><li><a href='#9'>Ut enim ad minim ven</a></li></ul>");
 };
 testCreateHtmlString();

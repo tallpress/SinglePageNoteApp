@@ -5,10 +5,13 @@ function NoteListView(noteList) {
 };
 
 NoteListView.prototype.createHtmlString = function() {
-  return "<ul><li>" + this.noteList
-  .getNotes()
-  .map(note => note.getNoteText().substr(0, 20))
-  .join("</li><li>") + "</li></ul>";
+  var html = "<ul>";
+  var list = this.noteList.getNotes();
+  for(var i = 0; i < list.length; i++) {
+    var note = list[i];
+    html += "<li><a href='#" + note.id + "'>" + note.getNoteText().substr(0, 20) + "</a></li>"
+  }
+  return html += "</ul>"
 };
 
 exports.NoteListView = NoteListView;
