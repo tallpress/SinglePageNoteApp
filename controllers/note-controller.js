@@ -28,6 +28,18 @@ function changeHTML(note) {
   document.getElementById('app').innerHTML = singleNoteView.createHtmlString();
 };
 
+function submitNewNote(){
+  document.getElementById("text").addEventListener("submit", function(event) {
+    event.preventDefault();
+    controller.makeHTMLList();
+    controller.noteList.createNote(document.getElementById("note-to-add").value)
+  })
+}
+
+
+
 controller = new NoteController();
 controller.makeHTMLList()
 changeDivForGivenNote();
+console.log(document.getElementById("submit-new-note"));
+submitNewNote();

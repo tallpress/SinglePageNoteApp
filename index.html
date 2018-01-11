@@ -7,12 +7,25 @@
   </head>
   <body>
 
+    <form id="text" method="post" action="/#new">
+      <label>Create a note here</label>
+    </br>
+      <textarea rows="4" cols="50" id="note-to-add"></textarea>
+      </br>
+      <input type="submit" value="Save note" id="submit-new-note" />
+    </form>
+
+
+
     <div id="app">hello</div>
     <script src='models/note-model.js'></script>
     <script src='models/note-list-model.js'></script>
     <script src='views/note-list-view.js' ></script>
     <script src='views/single-note-view.js'></script>
     <script type="text/javascript" src='controllers/note-controller.js'></script>
+
+
+
 
   </body>
 </html>
