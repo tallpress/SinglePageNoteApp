@@ -1,7 +1,6 @@
 (function(exports) {
 function NoteController(noteList = new NoteList()) {
   this.noteList = noteList;
-  this.noteList.createNote("Favourite drink: seltzer");
   this.view = new NoteListView(this.noteList);
 };
 
@@ -31,8 +30,16 @@ function changeHTML(note) {
 function submitNewNote(){
   document.getElementById("text").addEventListener("submit", function(event) {
     event.preventDefault();
-    controller.makeHTMLList();
     controller.noteList.createNote(document.getElementById("note-to-add").value)
+    controller.makeHTMLList();
+    document.getElementById("note-to-add").value = "";
+  })
+}
+
+function backBtn() {
+  document.getElementById("back-button").addEventListener("submit", function(event) {
+    event.preventDefault();
+    controller.makeHTMLList();
   })
 }
 
@@ -41,5 +48,5 @@ function submitNewNote(){
 controller = new NoteController();
 controller.makeHTMLList()
 changeDivForGivenNote();
-console.log(document.getElementById("submit-new-note"));
 submitNewNote();
+backBtn();
