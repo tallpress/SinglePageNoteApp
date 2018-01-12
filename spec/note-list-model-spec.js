@@ -37,7 +37,7 @@ function testGetNoteById() {
   notelist.createNote("lkasdfj;alsdkfj;alfskjfa;sdlk")
   notelist.createNote("daaaaaaaaaaaaaa,.sandflkjndasjklfnadmf;sdlk")
   notelist.createNote("laaaaadmfnadnbabnababababababababaabababab")
-  assert.isTrue(notelist.getNoteById(9).getNoteText() === "daaaaaaaaaaaaaa,.sandflkjndasjklfnadmf;sdlk")
+  assert.isTrue(notelist.getNoteById(8).getNoteText() === "daaaaaaaaaaaaaa,.sandflkjndasjklfnadmf;sdlk")
 }
 
 testGetNoteById()

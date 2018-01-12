@@ -36,7 +36,7 @@ function submitNewNote(){
   })
 }
 
-// should probably hide and show this according to when it is neccesay 
+// should probably hide and show this according to when it is neccesay
 function backBtn() {
   document.getElementById("back-button").addEventListener("submit", function(event) {
     event.preventDefault();

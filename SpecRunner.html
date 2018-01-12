@@ -5,7 +5,22 @@
     <title></title>
   </head>
   <body>
+    <div id="form-section">
 
+
+      <form id="text" method="post" action="/#new">
+        <label>Create a note here</label>
+      </br>
+        <textarea rows="4" cols="50" id="note-to-add"></textarea>
+        </br>
+        <input type="submit" value="Save note" id="submit-new-note" />
+      </form>
+
+      <form id="back-button" method="post" action="/">
+        <input type="submit" value="Back to list" id="back-to-list" />
+      </form>
+    </div>
+    
     <div id="app">hello</div>
 
     <script src='models/note-model.js'></script>

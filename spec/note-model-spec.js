@@ -12,6 +12,6 @@ testGetNoteMessage();
 
 function testNoteID() {
   var note = new Note("My favourite langauge is JavaScript");
-  assert.isTrue(note.id === 3);
+  assert.isTrue(note.id === 2);
 };
 testNoteID();

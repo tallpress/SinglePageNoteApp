@@ -5,8 +5,8 @@ function testInsertHTML() {
     return "<ul><li>Favourite drink: milkshake</li></ul>"
   };
 
-  var noteController = new NoteController()
-  noteController.makeHTMLList(noteListView);
+  var controller = new NoteController()
+  controller.makeHTMLList(noteListView);
   assert.isTrue(document.getElementById('app').innerHTML === "<ul><li>Favourite drink: milkshake</li></ul>")
 };
 
