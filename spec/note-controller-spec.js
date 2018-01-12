@@ -10,4 +10,18 @@ function testInsertHTML() {
   assert.isTrue(document.getElementById('app').innerHTML === "<ul><li>Favourite drink: milkshake</li></ul>")
 };
 
+
+function testPageRendersWithEmptyList() {
+  var noteListView = new NoteListView();
+  assert.isTrue(document.getElementById('app').innerHTML === "");
+}
+
+function resetAppDiv() {
+  document.getElementById('app').innerHTML = "";
+}
+
+resetAppDiv();
 testInsertHTML();
+resetAppDiv();
+testPageRendersWithEmptyList();
+resetAppDiv();
