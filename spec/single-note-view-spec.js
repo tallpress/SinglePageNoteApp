@@ -9,4 +9,5 @@ function testCreateHtmlString() {
 
   assert.isTrue(singleNoteView.createHtmlString() === "<div>Favourite drink: green tea</div>")
 }
-testCreateHtmlString()
+
+testRunner.addTest(testCreateHtmlString);
